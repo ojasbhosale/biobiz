@@ -1,0 +1,326 @@
+/* General Reset */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Navbar */
+.navbar .nav-link {
+    color: #555;
+}
+
+.navbar .nav-link.active {
+    color: #007bff !important;
+}
+
+.container img {
+    height: 3rem;
+    width: 8em;
+}
+
+/* Hero Section Background Images with Smooth Transition */
+#heroImages {
+    background: url('../images/image1.jpg') no-repeat center center/cover;
+    animation: heroScroll 12s infinite;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Place it behind the hero text */
+}
+
+/* Hero Image Animation */
+@keyframes heroScroll {
+    0% { background: url('../images/image1.jpg') no-repeat center center/cover; }
+    25% { background: url('../images/image2.jpg') no-repeat center center/cover; }
+    50% { background: url('../images/image3.jpg') no-repeat center center/cover; }
+    75% { background: url('../images/image4.jpg') no-repeat center center/cover; }
+    100% { background: url('../images/image1.jpg') no-repeat center center/cover; }
+}
+
+/* Ensure the Hero Section has Fullscreen Dimensions */
+#home {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    color: white;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+/* Floating Social Media Icons just below the Navbar */
+.social-media-icons {
+    position: fixed;
+    top: 100px; /* Just below the navbar */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 15px;
+    z-index: 9999;
+    padding-left: 1rem;
+}
+
+/* Styling the social media icons */
+.social-media-icons a {
+    font-size: 1.3rem;
+    color: #fff; /* Default color */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+/* Facebook Icon Color */
+.social-media-icons .fab.fa-facebook-f {
+    color: #3b5998;
+}
+
+/* Twitter Icon Color */
+.social-media-icons .fab.fa-twitter {
+    color: #1DA1F2;
+}
+
+/* LinkedIn Icon Color */
+.social-media-icons .fab.fa-linkedin-in {
+    color: #0077b5;
+}
+
+/* Instagram Icon Color */
+.social-media-icons .fab.fa-instagram {
+    color: #e4405f;
+}
+
+/* YouTube Icon Color */
+.social-media-icons .fab.fa-youtube {
+    color: #FF0000;
+}
+
+/* Hover effect on icons */
+.social-media-icons a:hover {
+    opacity: 0.7; /* Slight fade effect on hover */
+}
+
+/* Hides Social Media Icons on mobile */
+@media (max-width: 576px) {
+    .social-media-icons {
+        display: none; /* Hides the social media icons section on mobile */
+    }
+}
+
+
+
+
+/* General Section Styling */
+#about {
+    background-color: #f8f9fa;
+    padding-left: 3rem;
+    padding-right: 3rem;
+}
+
+/* Left Side Content Styling */
+#about h1.display-5, #about h1.display-4 {
+    font-size: 3rem;
+    font-weight: bold;
+    line-height: 1.3;
+    color: #198754; /* Vibrant Green */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+#about p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #555; /* Soft Gray */
+}
+
+#about p .text-success {
+    color: #198754;
+    font-weight: bold;
+}
+
+#about p .text-primary {
+    color: #fd550d;
+    font-weight: bold;
+}
+
+#about ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+#about ul li {
+    position: relative;
+    font-size: 1.05rem;
+    margin-bottom: 0.75rem;
+    color: #444; /* Slightly darker gray for better contrast */
+    padding-left: 1.5rem;
+}
+
+.leftabout ul li::before {
+    content: "✔";
+    position: absolute;
+    left: 0;
+    color: #198754; /* Green checkmark */
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.btn-success {
+    background-color: #198754;
+    border-color: #198754;
+    font-size: 1rem;
+    padding: 10px 20px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn-success:hover {
+    background-color: #145c39;
+    border-color: #145c39;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.text-secondary {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #6c757d;
+}
+
+
+/* Noticeboard Styling */
+.noticeboard {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    background: #fff;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.noticeboard-header {
+    position: relative;
+    background-color: #198754;
+    color: #fff;
+    border-bottom: 1px solid #145c39;
+    z-index: 10;
+}
+
+.noticeboard-body {
+    height: 400px;
+    overflow: hidden;
+}
+
+.scrolling-updates {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    animation: scrollUpdates 25s linear infinite;
+}
+
+.scrolling-updates li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 0.95rem;
+    font-weight: 500;
+    background-color: #f8f9fa;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.scrolling-updates li:nth-child(even) a {
+    background-color: #eef5ea; /* Alternating row color */
+}
+
+.scrolling-updates li a:hover {
+    background-color: #d4edda;
+    color: #198754;
+}
+
+.noticeboard-footer a {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #fff;
+    background-color: #198754;
+    transition: all 0.3s ease;
+}
+
+.noticeboard-footer a:hover {
+    background-color: #145c39;
+}
+
+@keyframes scrollUpdates {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-100%);
+    }
+}
+
+
+
+/* Topics Section */
+/* General Section Styling */
+#topics {
+    background-color: #f8f9fa;
+}
+
+h3 {
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+}
+
+/* Topic Card */
+.topic-card {
+    width: 180px;
+    height: 180px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.topic-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Topic Icon */
+.topic-icon {
+    font-size: 2.5rem;
+    color: #28a745; /* Default green, can be overridden */
+}
+
+/* Topic Title */
+.topic-title {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #555;
+    margin: 0;
+}
+
+.row span {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 600;
+    padding-top: 2rem;
+    color: #fd550d;
+}
+
+/* Footer */
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    color: white;
+    background-color: teal;
+}
+
